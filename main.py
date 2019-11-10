@@ -3,10 +3,9 @@ from messages import Command, Empty, Invalid, Valid
 
 def main():
     print('')
-    print('| -------------- |')
-    print('| Digitial Brain |')
-    print('| -------------- |')
-    # print('//////////////')
+    print('| ------------- |')
+    print('| Digital Brain |')
+    print('| ------------- |')
     print('')
     print_help()
     while get_and_run_command():

@@ -12,3 +12,27 @@ Systems responds: Yes.
 ```
 
 In this example the system stores the two entered facts and uses them to infer that Seoul is located in Asia. Notice how both memory and reasoning was necessary to answer the two question.
+
+## Requirements
+This work depends on the following requirements:
+
+* Python (>= 3.6)
+
+## Installation
+Start by cloning the repository:
+
+``` sh
+git clone https://github.com/ChrisFugl/Reasoning-From-Memory
+```
+
+Install Python packages through pip:
+
+``` sh
+pip install -r requirements.txt
+```
+
+Install English core for spaCy.
+
+``` sh
+python -m spacy download en_core_web_sm
+```
