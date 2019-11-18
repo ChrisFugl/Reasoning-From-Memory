@@ -1,0 +1,6 @@
+[]'s mother is [].
+[]'s father is [].
+[] is a child of [].
+[]'s parent is [].
+[] is []'s daughter.
+[] is []'s son.

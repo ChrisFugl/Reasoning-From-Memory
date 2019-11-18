@@ -1,0 +1,9 @@
+[] is not in [].
+[] does not lie in [].
+[] is not located inside of [].
+[] is not located in [].
+[] is not the capital of [].
+[] is not a country in [].
+[] is not a town in [].
+[] is not a city in [].
+[] is not an area in [].

@@ -1,0 +1,9 @@
+[] is not a descendant of [].
+[] does not descend from [].
+[] can not trace her parentage to [].
+[] can not trace his parentage to [].
+[]'s grandmother is not [].
+[]'s' grandfather is not [].
+[]'s great grandmother is not [].
+[]'s great grandfather is not [].
+[] does not come from []'s line.

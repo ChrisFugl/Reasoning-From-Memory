@@ -1,0 +1,11 @@
+[] is not in family with [].
+[] is not related to [].
+[] and [] are not from the same family.
+[] and [] are from different families.
+[] and [] do not come from the same family.
+[] and [] are not sisters.
+[]'s sister is not [].
+[] and [] are not brothers.
+[]'s brother is not [].
+[] and [] are not siblings.
+[]'s sibling is not [].
