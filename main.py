@@ -1,5 +1,5 @@
-from interpreter import interpret_command, interpret_fact, interpret_question
-from messages import Command, Empty, Invalid, Valid
+from app.interpreter import interpret_command, interpret_fact, interpret_question
+from app.messages import Command, Empty, Invalid, Valid
 
 def main():
     print('')
