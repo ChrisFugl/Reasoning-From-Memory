@@ -34,11 +34,11 @@ test('does not descend from ancestor', [
 ]) :-
   descends_from_negated(mia, john).
 
-test('transitive through ancestor', [
+test('does not share a common ancestor', [
   nondet,
   setup((
-    assert_descend(john, mia),
-    assert_not_descend(mia, carl)
+    assert_not_descend(john, steve),
+    assert_descend(carl, steve)
   )),
   cleanup(remove_facts)
 ]) :-

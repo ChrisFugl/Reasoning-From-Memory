@@ -15,7 +15,7 @@ class Fact:
         """Equality check."""
         if other is None:
             return False
-        elif not isinstance(other, self.Fact):
+        elif not isinstance(other, Fact):
             return False
         else:
             return self.relation == other.relation

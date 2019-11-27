@@ -1,5 +1,7 @@
 """Contains function to match a triples with relations."""
 
+from app.types.match import Match
+
 def find_matches(triples, threshold):
     """
     Find closest matching relation to every triple in a list.

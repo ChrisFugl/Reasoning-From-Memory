@@ -8,6 +8,7 @@ from app.types.command import Command
 from app.types.validation import Validation
 from app.validate import validate_command
 
+# TODO: move thresholds to config, so that evaluate script can access them
 THRESHOLD_FACT = 1
 THRESHOLD_QUESTION = 1
 

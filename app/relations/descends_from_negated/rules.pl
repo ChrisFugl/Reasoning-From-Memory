@@ -9,6 +9,5 @@ descends_from_negated(Person1, Person2) :-
   descends_from(Person2, Person1).
 
 descends_from_negated(Person1, Person2) :-
-  descends_from:fact_descends_from(Person1, Person1sAncestor),
-  descends_from_negated(Person1sAncestor, Person2),
-  Person1 \= Person2.
+  descends_from:fact_descends_from(Person2, Person2sAncestor),
+  descends_from_negated(Person1, Person2sAncestor).

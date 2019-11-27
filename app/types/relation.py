@@ -32,8 +32,8 @@ class Relation:
             return self.entity1 != other.entity1 or self.entity2 != other.entity2
 
     def __str__(self):
-        """Prolog string representation of relation."""
-        return f'{self.relation_name}({self.entity1,self.entity2}).'
+        """Represent string as a predicate."""
+        return f'{self.relation_name}({self.entity1,self.entity2})'
 
 class ChildOf(Relation):
     """child_of relation."""

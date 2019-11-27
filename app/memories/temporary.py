@@ -9,4 +9,5 @@ class TemporaryMemory:
 
         :type facts: list of app.types.fact.Fact
         """
-        raise NotImplementedError()
+        for fact in facts:
+            self.facts.append(fact)

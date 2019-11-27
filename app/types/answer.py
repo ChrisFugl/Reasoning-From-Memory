@@ -7,16 +7,16 @@ class Answer:
     NO = 2
     YES = 3
 
-    def __init__(self, answer, match):
+    def __init__(self, answer, question):
         """
         Create an answer.
 
         :type answer: int
-        :type match: app.types.relation.Relation
+        :type question: app.types.question.Question
         """
         assert answer in [Answer.UNKNOWN, Answer.NO, Answer.YES]
         self.answer = answer
-        self.match = match
+        self.question = question
 
     def __eq__(self, other):
         """Equality check."""
@@ -25,7 +25,7 @@ class Answer:
         elif not isinstance(other, Answer):
             return False
         else:
-            return self.answer == other.answer and self.match == other.match
+            return self.answer == other.answer and self.question == other.question
 
     def __ne__(self, other):
         """Inequality check."""
@@ -34,4 +34,4 @@ class Answer:
         elif not isinstance(other, Answer):
             return True
         else:
-            return self.answer != other.answer or self.match != other.match
+            return self.answer != other.answer or self.question != other.question
