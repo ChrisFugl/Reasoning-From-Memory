@@ -12,3 +12,7 @@ class Match:
         """
         self.relation = relation
         self.distance = distance
+
+    def __str__(self):
+        """Represent match as a string."""
+        return f'({self.relation}, {self.distance})'

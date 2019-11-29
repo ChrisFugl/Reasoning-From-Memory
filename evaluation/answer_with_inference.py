@@ -2,8 +2,9 @@
 
 from app.types.answer import Answer
 from app.types.fact import Fact
+from app.utils import name2relation
 from evaluation.types import EvaluationResult, TestResult
-from evaluation.utils import answer_question, name2relation
+from evaluation.utils import answer_question
 
 def answer_with_inference(threshold):
     """

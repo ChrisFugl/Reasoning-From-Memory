@@ -23,7 +23,7 @@ def create_triples(user_input):
             entity_next = entities[entity_current_index + 1]
             predicate = _get_predicate(user_input, entities, entities_count, entity_current_index)
             triple = Triple(predicate, entity_current.text, entity_next.text)
-            triples.append(str(triple))
+            triples.append(triple)
         return triples
 
 def _get_predicate(user_input, entities, entities_count, entity_current_index):

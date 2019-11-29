@@ -33,7 +33,7 @@ def _parse_config(config_path):
     return config
 
 def _run_evaluations(threshold_fact, threshold_question):
-    print('EvaluatingL Answer no.')
+    print('Evaluating: Answer no.')
     answer_no_result = evaluation.answer_no(threshold_fact)
     print('Evaluating: Answer unknown.')
     answer_unknown_result = evaluation.answer_unknown(threshold_question)
