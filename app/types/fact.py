@@ -28,3 +28,7 @@ class Fact:
             return True
         else:
             return self.relation != other.relation
+
+    def __str__(self):
+        """Represent facts as a string."""
+        return str(self.relation)

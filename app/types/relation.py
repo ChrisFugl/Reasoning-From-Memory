@@ -33,7 +33,7 @@ class Relation:
 
     def __str__(self):
         """Represent string as a predicate."""
-        return f'{self.relation_name}({self.entity1,self.entity2})'
+        return f'{self.relation_name}({self.entity1},{self.entity2})'
 
 class ChildOf(Relation):
     """child_of relation."""
