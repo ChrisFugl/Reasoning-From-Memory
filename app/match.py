@@ -1,5 +1,6 @@
 """Contains function to match a triples with relations."""
 
+from app.triple import create_triples
 from app.types.match import Match
 
 def find_matches(triples, threshold):
@@ -12,7 +13,7 @@ def find_matches(triples, threshold):
     :type threshold: float
     :rtype: list of app.types.match.Match
     """
-    raise NotImplementedError()
+
 
 def input2matches(user_input, threshold):
     """
@@ -22,4 +23,5 @@ def input2matches(user_input, threshold):
     :type threshold: float
     :rtype: list of app.types.match.Match
     """
-    raise NotImplementedError()
+    triples = create_triples(user_input)
+    return find_matches(triples, threshold)

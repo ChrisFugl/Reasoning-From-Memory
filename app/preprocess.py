@@ -11,8 +11,9 @@ def preprocess(text):
     :type text: str
     :rtype: str
     """
+    preprocessed = text
     # remove leading and trailing whitespace
-    preprocessed = text.strip()
+    preprocessed = preprocessed.strip()
     # exactly one space between words
     space_pattern = r'([ \t][ \t]+)'
     preprocessed = re.sub(space_pattern, ' ', preprocessed)

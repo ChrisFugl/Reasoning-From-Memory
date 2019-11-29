@@ -14,3 +14,7 @@ class Triple:
         self.predicate_decsription = predicate_decsription
         self.entity1 = entity1
         self.entity2 = entity2
+
+    def __str__(self):
+        """Represent triple as a string."""
+        return f'({self.predicate_decsription}, {self.entity1}, {self.entity2})'

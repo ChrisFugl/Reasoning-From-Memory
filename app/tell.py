@@ -13,7 +13,7 @@ def tell(memory, threshold):
     """
     io.reply('What do you want to tell me?')
     while True:
-        user_input, valid, validation_mesage = io.prompt('ask')
+        user_input, valid, validation_mesage = io.prompt('tell')
         if not valid:
             io.reply(validation_mesage)
             continue
