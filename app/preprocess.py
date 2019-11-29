@@ -1,5 +1,7 @@
 """Contain function to preprocess user input."""
 
+import re
+
 def preprocess(text):
     """
     Preprocess text.
@@ -11,4 +13,7 @@ def preprocess(text):
     """
     # remove leading and trailing whitespace
     preprocessed = text.strip()
+    # exactly one space between words
+    space_pattern = r'([ \t][ \t]+)'
+    preprocessed = re.sub(space_pattern, ' ', preprocessed)
     return preprocessed
