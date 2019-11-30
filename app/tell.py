@@ -1,15 +1,14 @@
 """Methods related to processing a fact."""
 
 import app.io as io
-from app.match import input2matches
 from app.types.fact import Fact
 
-def tell(threshold, nlp, memory):
+def tell(threshold, matcher, memory):
     """
     Interactive option to tell a fact.
 
     :type threshold: float
-    :type nlp: spacy.language.Language
+    :type matcher: app.match.Matcher
     :type memory: app.memories.memory.Memory
     """
     io.reply('What do you want to tell me?')
@@ -18,7 +17,7 @@ def tell(threshold, nlp, memory):
         if not valid:
             io.reply(validation_mesage)
             continue
-        matches = input2matches(threshold, nlp, user_input)
+        matches = matcher.input2matches(threshold, user_input)
         n_matches = len(matches)
         if n_matches == 0:
             # TODO: how to give detailed information on why no match was found?

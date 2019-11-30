@@ -21,7 +21,9 @@ def create_triples(nlp, user_input):
             entity_current = entities[entity_current_index]
             entity_next = entities[entity_current_index + 1]
             predicate = _get_predicate(user_input, entities, entities_count, entity_current_index)
-            triple = Triple(predicate, entity_current.text, entity_next.text)
+            entity1 = _get_entity(entity_current.text)
+            entity2 = _get_entity(entity_next.text)
+            triple = Triple(predicate, entity1, entity2)
             triples.append(triple)
         return triples
 
@@ -36,3 +38,6 @@ def _get_predicate(user_input, entities, entities_count, entity_current_index):
         stop = entities[entity_current_index + 2].start_char
     predicate = user_input[start:stop].strip()
     return predicate
+
+def _get_entity(entity):
+    return entity.replace(' ', '_')

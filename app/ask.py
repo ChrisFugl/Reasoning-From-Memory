@@ -1,17 +1,16 @@
 """Methods related to asking a question."""
 
 import app.io as io
-from app.match import input2matches
 from app.reason import reason
 from app.types.answer import Answer
 from app.types.question import Question
 
-def ask(threshold, nlp, facts):
+def ask(threshold, matcher, facts):
     """
     Interactive option to ask a question.
 
     :type threshold: float
-    :type nlp: spacy.language.Language
+    :type matcher: app.match.Matcher
     :type facts: list of app.types.fact.Fact
     """
     io.reply('What do you want to ask me?')
@@ -20,7 +19,7 @@ def ask(threshold, nlp, facts):
         if not valid:
             io.reply(validation_mesage)
             continue
-        matches = input2matches(threshold, nlp, user_input)
+        matches = matcher.input2matches(threshold, user_input)
         n_matches = len(matches)
         if n_matches == 0:
             # TODO: how to give detailed information on why no match was found?

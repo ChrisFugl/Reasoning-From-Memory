@@ -1,16 +1,15 @@
 """Contains methods to help evaluate the application."""
 
-from app.match import input2matches
 from app.reason import reason
 from app.types.question import Question
 from app.utils import name2relation
 
-def match_with_relation(threshold, nlp, sentence, relation_name, entity1, entity2):
+def match_with_relation(threshold, matcher, sentence, relation_name, entity1, entity2):
     """
     Check if a match can be found for a sentence.
 
     :type threshold: float
-    :type nlp: spcacy.language.Language
+    :type matcher: app.match.Matcher
     :type sentence: str
     :type relation_name: str
     :type entity1: str
@@ -20,7 +19,7 @@ def match_with_relation(threshold, nlp, sentence, relation_name, entity1, entity
     relation_class = name2relation(relation_name)
     expected_relation = relation_class(entity1, entity2)
     try:
-        matches = input2matches(threshold, sentence, nlp)
+        matches = matcher.input2matches(threshold, sentence)
         if len(matches) == 0:
             match = None
             passed = False
@@ -44,18 +43,18 @@ def match_with_relation(threshold, nlp, sentence, relation_name, entity1, entity
         fail_reason = 'Exception.'
     return match, passed, fail_reason
 
-def match_with_relation_name(threshold, nlp, sentence, relation_name):
+def match_with_relation_name(threshold, matcher, sentence, relation_name):
     """
     Check if a match can be found for a sentence.
 
     :type threshold: float
-    :type nlp: spcacy.language.Language
+    :type matcher: app.match.Matcher
     :type sentence: str
     :type relation_name: str
     :rtype: (app.types.match.Match, bool, str)
     """
     try:
-        matches = input2matches(threshold, nlp, sentence)
+        matches = matcher.input2matches(threshold, sentence)
         if len(matches) == 0:
             match = None
             passed = False
@@ -79,17 +78,17 @@ def match_with_relation_name(threshold, nlp, sentence, relation_name):
         fail_reason = 'Exception.'
     return match, passed, fail_reason
 
-def no_match(threshold, nlp, sentence):
+def no_match(threshold, matcher, sentence):
     """
     Check that a match cannot be found for a sentence.
 
     :type threshold: float
-    :type nlp: spcacy.language.Language
+    :type matcher: app.match.Matcher
     :type sentence: str
     :rtype: (bool, str)
     """
     try:
-        matches = input2matches(threshold, nlp, sentence)
+        matches = matcher.input2matches(threshold, sentence)
         if len(matches) == 0:
             passed = True
             fail_reason = None
@@ -101,12 +100,12 @@ def no_match(threshold, nlp, sentence):
         fail_reason = 'Exception.'
     return passed, fail_reason
 
-def answer_question(threshold, nlp, sentence, relation_name, entity1, entity2, facts):
+def answer_question(threshold, matcher, sentence, relation_name, entity1, entity2, facts):
     """
     Attempt to answer a question.
 
     :type threshold: float
-    :type nlp: spcacy.language.Language
+    :type matcher: app.match.Matcher
     :type sentence: str
     :type facts: list of app.types.fact.Fact
     :type relation_name: str
@@ -114,7 +113,7 @@ def answer_question(threshold, nlp, sentence, relation_name, entity1, entity2, f
     :type entity2: str
     :rtype: (app.types.answer.Answer, bool, str)
     """
-    match, passed_match, match_fail_reason = match_with_relation(threshold, nlp, sentence, relation_name, entity1, entity2)
+    match, passed_match, match_fail_reason = match_with_relation(threshold, matcher, sentence, relation_name, entity1, entity2)
     if not passed_match:
         return None, False, match_fail_reason
     else:

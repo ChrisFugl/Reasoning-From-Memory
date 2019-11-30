@@ -4,6 +4,7 @@ import argparse
 from app.ask import ask
 import app.io as io
 from app.language import get_language
+from app.match import Matcher
 from app.memories.persistent import PersistentMemory
 from app.tell import tell
 from app.types.command import Command
@@ -22,6 +23,7 @@ def _main():
     memory_path = os.path.abspath(config['memory_path'])
     memory = PersistentMemory(memory_path)
     nlp = get_language()
+    matcher = Matcher(nlp)
     io.help()
     while True:
         user_input, valid, validation_mesage = io.prompt()
@@ -38,9 +40,9 @@ def _main():
                 elif user_input == Command.HELP:
                     io.help()
                 elif user_input == Command.ASK:
-                    ask(thresholds['question'], nlp, memory.facts)
+                    ask(thresholds['question'], matcher, memory.facts)
                 elif user_input == Command.TELL:
-                    tell(thresholds['fact'], nlp, memory)
+                    tell(thresholds['fact'], matcher, memory)
 
 def _parse_arguments(arguments):
     parser = argparse.ArgumentParser()
