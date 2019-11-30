@@ -25,6 +25,7 @@ def ask(threshold, matcher, facts):
             # TODO: how to give detailed information on why no match was found?
             io.reply('Sorry. My digital brain is not yet fully evolved. I did not understand it.')
             io.reply('Could you rephrase the question, so I might be able to understand it?')
+            return
         else:
             if 1 < n_matches:
                 selected_match = _select_match(matches)

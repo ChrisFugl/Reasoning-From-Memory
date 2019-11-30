@@ -23,6 +23,7 @@ def tell(threshold, matcher, memory):
             # TODO: how to give detailed information on why no match was found?
             io.reply('Sorry. My digital brain is not yet fully evolved. I did not understand it.')
             io.reply('Could you rephrase the the fact, so I might be able to understand it?')
+            return
         else:
             facts = list(map(_match2fact, matches))
             memory.store(facts)
