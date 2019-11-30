@@ -6,27 +6,28 @@ from app.utils import name2relation
 from evaluation.types import EvaluationResult, TestResult
 from evaluation.utils import answer_question
 
-def answer_no(threshold):
+def answer_no(threshold, nlp):
     """
     Evaluate answer_no test.
 
     :type threshold: float
+    :type nlp: spcacy.language.Language
     :rtype: evaluation.types.EvaluationResult
     """
     test_results = [
-        _test_reason('mia is a child of john', threshold, 'child_of', 'john', 'mia'),
-        _test_reason('korea is in seoul', threshold, 'contained_in_location', 'seoul', 'korea'),
-        _test_reason('eve descends from john', threshold, 'descends_from', 'john', 'eve'),
+        _test_reason(threshold, nlp, 'mia is a child of john', 'child_of', 'john', 'mia'),
+        _test_reason(threshold, nlp, 'korea is in seoul', 'contained_in_location', 'seoul', 'korea'),
+        _test_reason(threshold, nlp, 'eve descends from john', 'descends_from', 'john', 'eve'),
     ]
     return EvaluationResult('answer_no', test_results)
 
-def _test_reason(sentence, threshold, relation_name, entity1, entity2):
+def _test_reason(threshold, nlp, sentence, relation_name, entity1, entity2):
     name = relation_name
     description = f'{relation_name}({entity1},{entity2})'
     relation_class = name2relation(relation_name)
     relation = relation_class(entity1, entity2)
     facts = [Fact(relation)]
-    answer, passed_answer, fail_reason_answer = answer_question(sentence, threshold, relation_name, entity1, entity2, facts)
+    answer, passed_answer, fail_reason_answer = answer_question(threshold, nlp, sentence, relation_name, entity1, entity2, facts)
     if not passed_answer:
         passed = False
         fail_reason = fail_reason_answer

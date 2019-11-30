@@ -1,5 +1,6 @@
 """Script to evaluate performance of the application."""
 
+from app.language import get_language
 import argparse
 import evaluation
 import json
@@ -33,20 +34,21 @@ def _parse_config(config_path):
     return config
 
 def _run_evaluations(threshold_fact, threshold_question):
+    nlp = get_language()
     print('Evaluating: Answer no.')
-    answer_no_result = evaluation.answer_no(threshold_fact)
+    answer_no_result = evaluation.answer_no(threshold_fact, nlp)
     print('Evaluating: Answer unknown.')
-    answer_unknown_result = evaluation.answer_unknown(threshold_question)
+    answer_unknown_result = evaluation.answer_unknown(threshold_question, nlp)
     print('Evaluating: Answer using inference.')
-    answer_with_inference_result = evaluation.answer_with_inference(threshold_question)
+    answer_with_inference_result = evaluation.answer_with_inference(threshold_question, nlp)
     print('Evaluating: Answer without using inference.')
-    answer_without_inference_result = evaluation.answer_without_inference(threshold_question)
+    answer_without_inference_result = evaluation.answer_without_inference(threshold_question, nlp)
     print('Evaluating: Match sentence with itself.')
-    match_to_self_result = evaluation.match_to_self(threshold_fact)
+    match_to_self_result = evaluation.match_to_self(threshold_fact, nlp)
     print('Evaluating: No match for unknown facts.')
-    no_match_for_unknown_facts_result = evaluation.no_match_for_unknown_facts(threshold_fact)
+    no_match_for_unknown_facts_result = evaluation.no_match_for_unknown_facts(threshold_fact, nlp)
     print('Evaluating: No match for unknown questions.')
-    no_match_for_unknown_questions_result = evaluation.no_match_for_unknown_questions(threshold_question)
+    no_match_for_unknown_questions_result = evaluation.no_match_for_unknown_questions(threshold_question, nlp)
     return [
         answer_no_result,
         answer_unknown_result,

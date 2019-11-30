@@ -1,5 +1,5 @@
-[] owns [].
-[]'s is the owner of [].
-[] has [].
-[] has a [].
-[] has an [].
+[1] owns [2].
+[1]'s is the owner of [2].
+[1] has [2].
+[1] has a [2].
+[1] has an [2].

@@ -1,9 +1,9 @@
-[] is in [].
-[] lies in [].
-[] is located inside of [].
-[] is located in [].
-[] is the capital of [].
-[] is a country in [].
-[] is a town in [].
-[] is a city in [].
-[] is an area in [].
+[1] is in [2].
+[1] lies in [2].
+[1] is located inside of [2].
+[1] is located in [2].
+[1] is the capital of [2].
+[1] is a country in [2].
+[1] is a town in [2].
+[1] is a city in [2].
+[1] is an area in [2].

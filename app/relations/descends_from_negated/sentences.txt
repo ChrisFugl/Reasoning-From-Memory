@@ -1,9 +1,9 @@
-[] is not a descendant of [].
-[] does not descend from [].
-[] can not trace her parentage to [].
-[] can not trace his parentage to [].
-[]'s grandmother is not [].
-[]'s' grandfather is not [].
-[]'s great grandmother is not [].
-[]'s great grandfather is not [].
-[] does not come from []'s line.
+[1] is not a descendant of [2].
+[1] does not descend from [2].
+[1] can not trace her parentage to [2].
+[1] can not trace his parentage to [2].
+[1]'s grandmother is not [2].
+[1]'s' grandfather is not [2].
+[1]'s great grandmother is not [2].
+[1]'s great grandfather is not [2].
+[1] does not come from [2]'s line.

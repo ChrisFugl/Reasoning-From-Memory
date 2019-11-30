@@ -1,4 +1,4 @@
-[] does not live in [].
-[] is not from [].
-[]'s home is not in [].
-[] does not come from [].
+[1] does not live in [2].
+[1] is not from [2].
+[1]'s home is not in [2].
+[1] does not come from [2].

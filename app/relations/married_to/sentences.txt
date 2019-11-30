@@ -1,6 +1,6 @@
-[] is married to [].
-[] is []'s spouse.
-[] is []'s wife.
-[] is []'s husband.
-[] and [] are married.
-[] is the spouse of [].
+[1] is married to [2].
+[1] is [2]'s spouse.
+[1] is [2]'s wife.
+[1] is [2]'s husband.
+[1] and [2] are married.
+[1] is the spouse of [2].

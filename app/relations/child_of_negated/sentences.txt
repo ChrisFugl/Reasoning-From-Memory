@@ -1,6 +1,6 @@
-[]'s mother is not [].
-[]'s father is not [].
-[] is not a child of [].
-[]'s parent is not [].
-[] is not []'s daughter.
-[] is not []'s son.
+[1]'s mother is not [2].
+[1]'s father is not [2].
+[1] is not a child of [2].
+[1]'s parent is not [2].
+[1] is not [2]'s daughter.
+[1] is not [2]'s son.

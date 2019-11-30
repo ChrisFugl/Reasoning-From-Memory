@@ -1,6 +1,6 @@
-[] is not married to [].
-[] is not []'s spouse.
-[] is not []'s wife.
-[] is not []'s husband.
-[] and [] are not married.
-[] is not the spouse of [].
+[1] is not married to [2].
+[1] is not [2]'s spouse.
+[1] is not [2]'s wife.
+[1] is not [2]'s husband.
+[1] and [2] are not married.
+[1] is not the spouse of [2].

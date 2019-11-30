@@ -1,6 +1,6 @@
-[]'s mother is [].
-[]'s father is [].
-[] is a child of [].
-[]'s parent is [].
-[] is []'s daughter.
-[] is []'s son.
+[1]'s mother is [2].
+[1]'s father is [2].
+[1] is a child of [2].
+[1]'s parent is [2].
+[1] is [2]'s daughter.
+[1] is [2]'s son.

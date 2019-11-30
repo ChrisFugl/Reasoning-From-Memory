@@ -1,4 +1,4 @@
-[] lives in [].
-[] is from [].
-[]'s home is in [].
-[] comes from [].
+[1] lives in [2].
+[1] is from [2].
+[1]'s home is in [2].
+[1] comes from [2].

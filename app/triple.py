@@ -1,17 +1,16 @@
 """Contains function to create triples from user input."""
 
 from app.types.triple import Triple
-import spacy
 
-def create_triples(user_input):
+def create_triples(nlp, user_input):
     """
     Create triples from user input.
 
+    :type nlp: spacy.language.Language
     :type user_input: str
     :rtype: list of app.types.triple.Triple
     """
-    language = spacy.load('en_core_web_sm')
-    document = language(user_input)
+    document = nlp(user_input)
     entities = document.ents
     entities_count = len(entities)
     if entities_count < 2:

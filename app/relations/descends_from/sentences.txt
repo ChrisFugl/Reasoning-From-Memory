@@ -1,9 +1,9 @@
-[] is a descends_from_fromant of [].
-[] descends_from_froms from [].
-[] can trace her parentage to [].
-[] can trace his parentage to [].
-[]'s grandmother is [].
-[]'s' grandfather is [].
-[]'s great grandmother is [].
-[]'s great grandfather is [].
-[] comes from []'s line.
+[1] is a descendant of [2].
+[1] descends from [2].
+[1] can trace her parentage to [2].
+[1] can trace his parentage to [2].
+[1]'s grandmother is [2].
+[1]'s' grandfather is [2].
+[1]'s great grandmother is [2].
+[1]'s great grandfather is [2].
+[1] comes from [2]'s line.

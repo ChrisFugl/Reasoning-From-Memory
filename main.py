@@ -3,6 +3,7 @@
 import argparse
 from app.ask import ask
 import app.io as io
+from app.language import get_language
 from app.memories.persistent import PersistentMemory
 from app.tell import tell
 from app.types.command import Command
@@ -13,13 +14,14 @@ import json
 import sys
 
 def _main():
+    io.welcome()
     arguments = sys.argv[1:]
     options = _parse_arguments(arguments)
     config = _parse_config(options.config)
     thresholds = config['threholds']
     memory_path = os.path.abspath(config['memory_path'])
     memory = PersistentMemory(memory_path)
-    io.welcome()
+    nlp = get_language()
     io.help()
     while True:
         user_input, valid, validation_mesage = io.prompt()
@@ -36,9 +38,9 @@ def _main():
                 elif user_input == Command.HELP:
                     io.help()
                 elif user_input == Command.ASK:
-                    ask(memory.facts, thresholds['question'])
+                    ask(thresholds['question'], nlp, memory.facts)
                 elif user_input == Command.TELL:
-                    tell(memory, thresholds['fact'])
+                    tell(thresholds['fact'], nlp, memory)
 
 def _parse_arguments(arguments):
     parser = argparse.ArgumentParser()
