@@ -32,7 +32,7 @@ def ask(threshold, matcher, facts):
             else:
                 selected_match = matches[0]
             question = _match2question(selected_match)
-            answer = reason(question)
+            answer = reason(facts, question)
             _print_answer(answer)
             return
 
@@ -51,8 +51,8 @@ def _match2question(match):
 
 def _print_answer(answer):
     if answer.answer == Answer.UNKNOWN:
-        return io.reply('I do not know.', True)
+        return io.reply('I do not know.')
     elif answer.answer == Answer.NO:
-        return io.reply('No.', True)
+        return io.reply('No.')
     else:
-        return io.reply('Yes.', True)
+        return io.reply('Yes.')

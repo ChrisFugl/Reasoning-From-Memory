@@ -13,6 +13,22 @@ class Relation:
         self.entity1 = entity1
         self.entity2 = entity2
 
+    def as_prolog_fact(self):
+        """
+        Represent as prolog fact.
+
+        :rtype: str
+        """
+        return f'{self.relation_name}:fact_{self.relation_name}({self.entity1},{self.entity2})'
+
+    def as_prolog_query(self):
+        """
+        Represent as prolog query.
+
+        :rtype: str
+        """
+        return f'{self.relation_name}:{self.relation_name}({self.entity1},{self.entity2})'
+
     def __eq__(self, other):
         """Equality check."""
         if other is None:

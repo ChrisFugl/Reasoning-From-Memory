@@ -17,6 +17,7 @@ In this example the system stores the two entered facts and uses them to infer t
 This work depends on the following requirements:
 
 * Python (>= 3.6)
+* SWI-Prolog (>= 8.0.0)
 
 ## Installation
 Start by cloning the repository:

@@ -5,6 +5,8 @@
 :- use_module(app/relations/descends_from_negated/rules, [descends_from_negated/2]).
 :- use_module(app/relations/married_to_negated/rules, [married_to_negated/2]).
 
+:- dynamic fact_related_to_negated/2.
+
 related_to_negated(Person1, Person2) :-
   fact_related_to_negated(Person1, Person2).
 

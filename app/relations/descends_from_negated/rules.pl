@@ -2,6 +2,8 @@
 
 :- use_module(app/relations/descends_from/rules, [descends_from/2]).
 
+:- dynamic fact_descends_from_negated/2.
+
 descends_from_negated(Person1, Person2) :-
   fact_descends_from_negated(Person1, Person2).
 

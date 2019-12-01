@@ -2,6 +2,6 @@
   "memory_path": "facts/test.txt",
   "threholds": {
     "fact": 1.75,
-    "question": 2.0
+    "question": 2.5
   }
 }

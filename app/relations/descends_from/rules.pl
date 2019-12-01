@@ -2,6 +2,8 @@
 
 :- use_module(app/relations/child_of/rules, [child_of/2]).
 
+:- dynamic fact_descends_from/2.
+
 descends_from(Person1, Person2) :-
   fact_descends_from(Person1, Person2).
 

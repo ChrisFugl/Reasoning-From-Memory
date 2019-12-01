@@ -15,9 +15,9 @@ def answer_no(threshold, matcher):
     :rtype: evaluation.types.EvaluationResult
     """
     test_results = [
-        _test_reason(threshold, matcher, 'mia is a child of john', 'child_of', 'john', 'mia'),
-        _test_reason(threshold, matcher, 'korea is in seoul', 'contained_in_location', 'seoul', 'korea'),
-        _test_reason(threshold, matcher, 'eve descends from john', 'descends_from', 'john', 'eve'),
+        _test_reason(threshold, matcher, 'Mia is a child of John', 'child_of', 'john', 'mia'),
+        _test_reason(threshold, matcher, 'Korea is in Seoul', 'contained_in_location', 'seoul', 'korea'),
+        _test_reason(threshold, matcher, 'Eve descends from John', 'descends_from', 'john', 'eve'),
     ]
     return EvaluationResult('answer_no', test_results)
 

@@ -7,6 +7,7 @@ def preprocess(text):
     Preprocess text.
 
     Removes leading and trailing whitespace.
+    Ensures that there is exactly one space between words.
 
     :type text: str
     :rtype: str

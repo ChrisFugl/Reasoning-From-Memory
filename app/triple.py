@@ -40,4 +40,4 @@ def _get_predicate(user_input, entities, entities_count, entity_current_index):
     return predicate
 
 def _get_entity(entity):
-    return entity.replace(' ', '_')
+    return entity.replace(' ', '_').lower()

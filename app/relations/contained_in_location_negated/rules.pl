@@ -2,6 +2,8 @@
 
 :- use_module(app/relations/contained_in_location/rules, [contained_in_location/2]).
 
+:- dynamic fact_contained_in_location_negated/2.
+
 contained_in_location_negated(Location1, Location2) :-
   fact_contained_in_location_negated(Location1, Location2).
 

@@ -1,5 +1,5 @@
 :- module(relations, [
-  child_of/2, fact_child_of/2,
+  child_of/2,
   child_of_negated/2,
   contained_in_location/2,
   contained_in_location_negated/2,
@@ -15,7 +15,7 @@
   related_to_negated/2
 ]).
 
-:- use_module(child_of/rules, [child_of/2, fact_child_of/2]).
+:- use_module(child_of/rules, [child_of/2]).
 :- use_module(child_of_negated/rules, [child_of_negated/2]).
 :- use_module(contained_in_location/rules, [contained_in_location/2]).
 :- use_module(contained_in_location_negated/rules, [contained_in_location_negated/2]).

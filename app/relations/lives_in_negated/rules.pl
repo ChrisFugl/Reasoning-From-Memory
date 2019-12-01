@@ -2,6 +2,8 @@
 
 :- use_module(app/relations/contained_in_location/rules, [contained_in_location/2]).
 
+:- dynamic fact_lives_in_negated/2.
+
 lives_in_negated(Person, Location) :-
   fact_lives_in_negated(Person, Location).
 

@@ -4,6 +4,8 @@
 :- use_module(app/relations/married_to/rules, [married_to/2]).
 :- use_module(app/relations/descends_from/rules, [descends_from/2]).
 
+:- dynamic fact_related_to/2.
+
 related_to(Person1, Person2) :-
   fact_related_to(Person1, Person2).
 

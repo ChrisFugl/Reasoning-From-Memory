@@ -1,5 +1,7 @@
 :- module(contained_in_location, [contained_in_location/2]).
 
+:- dynamic fact_contained_in_location/2.
+
 contained_in_location(Location1, Location2) :-
   fact_contained_in_location(Location1, Location2).
 
