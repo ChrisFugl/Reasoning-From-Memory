@@ -2,35 +2,27 @@
 
 from app.language import get_language
 from app.match import Matcher
-import argparse
 import evaluation
 import json
 import os
 import pandas as pd
-import sys
 from tabulate import tabulate
+
+_CONFIG_PATH = 'configs/evaluate.json'
 
 def evaluate():
     """Evaluate system performance."""
-    arguments = sys.argv[1:]
-    options = _parse_arguments(arguments)
-    config = _parse_config(options.config)
+    config = _parse_config()
     threholds = config['threholds']
     evaluation_results = _run_evaluations(threholds['fact'], threholds['question'])
     _print_summary(evaluation_results)
     _print_total(evaluation_results)
     _save_results(config['save_directory'], evaluation_results)
 
-def _parse_arguments(arguments):
-    parser = argparse.ArgumentParser()
-    parser.add_argument('config', type=str, help='path to config')
-    options = parser.parse_args(arguments)
-    return options
-
-def _parse_config(config_path):
-    with open(config_path, 'r') as config_file:
+def _parse_config():
+    with open(_CONFIG_PATH, 'r') as config_file:
         config = json.load(config_file)
-    config['name'] = config_path.split('/')[-1].replace('.json', '')
+    config['name'] = _CONFIG_PATH.split('/')[-1].replace('.json', '')
     config['save_directory'] = f'results/{config["name"]}'
     return config
 

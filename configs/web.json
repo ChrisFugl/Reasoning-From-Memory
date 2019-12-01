@@ -1,0 +1,7 @@
+{
+  "memory_path": "facts/web.txt",
+  "threholds": {
+    "fact": 1.75,
+    "question": 2.5
+  }
+}

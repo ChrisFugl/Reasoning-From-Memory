@@ -3,14 +3,6 @@
 class Memory:
     """Base class to store facts."""
 
-    def __init__(self, facts=[]):
-        """
-        Create a memory store.
-
-        :type facts: list of app.types.fact.Fact
-        """
-        self.facts = facts
-
     def store(self, facts):
         """
         Memorize facts.

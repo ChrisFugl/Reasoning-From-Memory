@@ -18,6 +18,7 @@ This work depends on the following requirements:
 
 * Python (>= 3.6)
 * SWI-Prolog (>= 8.0.0)
+* [websocketd](https://github.com/joewalnes/websocketd)
 
 ## Installation
 Start by cloning the repository:

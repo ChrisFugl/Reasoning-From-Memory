@@ -27,11 +27,20 @@ def prompt(prefix=None):
     :type prefix: str
     :rtype: (str, bool, str)
     """
-    if prefix is None:
-        user_input = input('> ')
-    else:
-        user_input = input(f'({prefix}) > ')
+    user_input = prompt_without_parse(prefix=prefix)
     return parse(user_input)
+
+def prompt_without_parse(prefix=None):
+    """
+    Prompt the user for input.
+
+    :type prefix: str
+    :rtype: str
+    """
+    if prefix is None:
+        return input('> ')
+    else:
+        return input(f'({prefix}) > ')
 
 def reply(message):
     """

@@ -1,0 +1,7 @@
+{
+  "memory_path": "facts/shell.txt",
+  "threholds": {
+    "fact": 1.75,
+    "question": 2.5
+  }
+}

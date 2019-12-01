@@ -1,34 +1,26 @@
 """Methods related to processing a fact."""
 
-import app.io as io
-from app.types.fact import Fact
+from app.parse import parse
+from app.utils import match2fact
 
-def tell(threshold, matcher, memory):
+def tell(threshold, matcher, memory, message):
     """
-    Interactive option to tell a fact.
+    Tell a fact.
 
     :type threshold: float
     :type matcher: app.match.Matcher
     :type memory: app.memories.memory.Memory
+    :type message: str
     """
-    io.reply('What do you want to tell me?')
-    while True:
-        user_input, valid, validation_mesage = io.prompt('tell')
-        if not valid:
-            io.reply(validation_mesage)
-            continue
-        matches = matcher.input2matches(threshold, user_input)
-        n_matches = len(matches)
-        if n_matches == 0:
-            # TODO: how to give detailed information on why no match was found?
-            io.reply('Sorry. My digital brain is not yet fully evolved. I did not understand it.')
-            io.reply('Could you rephrase the the fact, so I might be able to understand it?')
-            return
-        else:
-            facts = list(map(_match2fact, matches))
-            memory.store(facts)
-            io.reply('Got it! I will remember that.')
-            return
-
-def _match2fact(match):
-    return Fact(match.relation)
+    user_input, valid, validation_mesage = parse(message)
+    if not valid:
+        return {'type': 'invalid', 'message': validation_mesage}
+    matches = matcher.input2matches(threshold, user_input)
+    n_matches = len(matches)
+    if n_matches == 0:
+        # TODO: how to give detailed information on why no match was found?
+        return {'type': 'no_match'}
+    else:
+        facts = list(map(match2fact, matches))
+        memory.store(facts)
+        return {'type': 'stored'}
