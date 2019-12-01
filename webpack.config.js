@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './web/index.js',
+  entry: './web/index.jsx',
   module: {
     rules: [
       {
@@ -33,5 +33,8 @@ module.exports = {
       web: path.resolve(__dirname, 'web/js/'),
     },
     extensions: ['.js', '.jsx'],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 };

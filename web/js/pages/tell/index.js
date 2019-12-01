@@ -1,0 +1,1 @@
+export { Tell } from './hoc';
