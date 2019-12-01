@@ -2,9 +2,3 @@
 [1] is related to [2].
 [1] and [2] are from the same family.
 [1] and [2] come from the same family.
-[1] and [2] are sisters.
-[1]'s sister is [2].
-[1] and [2] are brothers.
-[1]'s brother is [2].
-[1] and [2] are siblings.
-[1]'s sibling is [2].

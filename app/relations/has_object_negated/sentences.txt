@@ -1,5 +1,5 @@
 [1] does not own [2].
-[1]'s is not the owner of [2].
+[1] is not the owner of [2].
 [1] does not have [2].
 [1] does not have a [2].
 [1] does not have an [2].

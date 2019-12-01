@@ -3,7 +3,7 @@
 [1] can not trace her parentage to [2].
 [1] can not trace his parentage to [2].
 [1]'s grandmother is not [2].
-[1]'s' grandfather is not [2].
+[1]'s grandfather is not [2].
 [1]'s great grandmother is not [2].
 [1]'s great grandfather is not [2].
 [1] does not come from [2]'s line.

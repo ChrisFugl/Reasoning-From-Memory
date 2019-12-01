@@ -3,9 +3,3 @@
 [1] and [2] are not from the same family.
 [1] and [2] are from different families.
 [1] and [2] do not come from the same family.
-[1] and [2] are not sisters.
-[1]'s sister is not [2].
-[1] and [2] are not brothers.
-[1]'s brother is not [2].
-[1] and [2] are not siblings.
-[1]'s sibling is not [2].
