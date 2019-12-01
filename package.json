@@ -1,0 +1,37 @@
+{
+  "name": "Reasoning-From-Memory",
+  "version": "1.0.0",
+  "description": "**This project is under development.**",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisFugl/Reasoning-From-Memory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisFugl/Reasoning-From-Memory/issues"
+  },
+  "homepage": "https://github.com/ChrisFugl/Reasoning-From-Memory#readme",
+  "devDependencies": {
+    "@babel/core": "7.7.4",
+    "@babel/preset-env": "7.7.4",
+    "@babel/preset-react": "7.7.4",
+    "babel-loader": "8.0.6",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0"
+  },
+  "dependencies": {
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
+  }
+}

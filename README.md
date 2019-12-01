@@ -16,6 +16,7 @@ In this example the system stores the two entered facts and uses them to infer t
 ## Requirements
 This work depends on the following requirements:
 
+* NodeJS (>= 12.0.0)
 * Python (>= 3.6)
 * SWI-Prolog (>= 8.0.0)
 * [websocketd](https://github.com/joewalnes/websocketd)
@@ -37,4 +38,10 @@ Install English core for spaCy.
 
 ``` sh
 python -m spacy download en_core_web_md
+```
+
+Install node modules.
+
+``` sh
+npm install
 ```
