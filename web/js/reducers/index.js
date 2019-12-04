@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux'
 
+import { chatReducer } from './chat';
+import { viewReducer } from './view';
 
-function root(state = {}, action) {
-  return {};
-}
-
-const appReducer = combineReducers({ root });
+const appReducer = combineReducers({
+  chat: chatReducer,
+  view: viewReducer,
+});
 
 export { appReducer };

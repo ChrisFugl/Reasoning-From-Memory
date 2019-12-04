@@ -3,25 +3,28 @@
 from app.ask import ask
 from app.language import get_language
 from app.match import Matcher
-from app.memories.temporary import TemporaryMemory
+from app.memories.persistent import PersistentMemory
 from app.tell import tell
 import json
+import sys
 
 _CONFIG_PATH = 'configs/web.json'
 
 def _main():
-    print(json.dumps({'type': 'loading'}))
     config = _parse_config()
     thresholds = config['threholds']
-    memory = TemporaryMemory()
+    memory = PersistentMemory(config['memory_path'])
     nlp = get_language()
     matcher = Matcher(nlp)
     print(json.dumps({'type': 'finished_loading'}))
     while True:
-        request = json.loads(input())
+        user_input = sys.stdin.readline()
+        request = json.loads(user_input)
         message_type = request['type']
         if message_type == 'exit':
             break
+        elif message_type == 'is_loading':
+            response = {'type': 'finished_loading'}
         elif message_type == 'ask':
             response = ask(thresholds['question'], matcher, memory.facts, request['message'])
         elif message_type == 'ask_select_match':
@@ -33,6 +36,7 @@ def _main():
         else:
             raise Exception(f'Unknown message type: {message_type}')
         print(json.dumps(response))
+        sys.stdout.flush()
 
 def _parse_config():
     with open(_CONFIG_PATH, 'r') as config_file:

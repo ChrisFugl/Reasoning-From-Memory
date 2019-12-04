@@ -9,7 +9,8 @@ def get_language():
 
     :rtype: spacy.language.Language
     """
-    nlp = spacy.load('en_core_web_md')
+    disabled_modules = ['tokenizer', 'tagger', 'parser', 'textcat']
+    nlp = spacy.load('en_core_web_md', disable=disabled_modules)
     # we are not interested in stop-words as most of them are
     # needed in the short sentence examples in relation definitions
     spacy_wmd_hook = wmd.WMD.SpacySimilarityHook(nlp, ignore_stops=False)
