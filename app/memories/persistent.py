@@ -5,6 +5,7 @@ from app.types.fact import Fact
 from app.utils import name2relation
 from functools import partial
 import operator
+import os
 import re
 
 class PersistentMemory(Memory):
@@ -14,6 +15,8 @@ class PersistentMemory(Memory):
         """Create a persistent memory."""
         self.memory_path = memory_path
         self.facts = self._load()
+        memory_directory = os.path.dirname(memory_path)
+        os.makedirs(memory_directory, exist_ok=True)
 
     def store(self, new_facts):
         """
