@@ -12,6 +12,6 @@ contained_in_location_negated(Location1, Location2) :-
   contained_in_location(Location2, Location1).
 
 contained_in_location_negated(Location1, Location2) :-
-  contained_in_location:fact_contained_in_location(Location1, Location1Container),
-  contained_in_location_negated(Location1Container, Location2),
+  contained_in_location:fact_contained_in_location(ContainedLocation1, Location1),
+  contained_in_location_negated(ContainedLocation1, Location2),
   Location1 \= Location2.

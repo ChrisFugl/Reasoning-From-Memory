@@ -26,15 +26,15 @@ test('does not contain a container', [
 ]) :-
   contained_in_location_negated(denmark, copenhagen).
 
-test('transitive through container', [
+test('transitive through contained location', [
   nondet,
   setup((
     assert_fact(copenhagen, denmark),
-    assert_fact_negated(denmark, narnia)
+    assert_fact_negated(copenhagen, narnia)
   )),
   cleanup(remove_facts)
 ]) :-
-  contained_in_location_negated(copenhagen, narnia).
+  contained_in_location_negated(denmark, narnia).
 
 test('fails transitivity through negations', [
   fail,
@@ -47,14 +47,14 @@ test('fails transitivity through negations', [
   contained_in_location_negated(copenhagen, narnia).
 
 test('finds all negated containments', [
-  set(NegatedContainments == [korea, narnia]),
+  set(NegatedContainments == [copenhagen, korea, narnia]),
   setup((
     assert_fact(copenhagen, denmark),
-    assert_fact_negated(denmark, narnia),
-    assert_fact_negated(copenhagen, korea)
+    assert_fact_negated(copenhagen, narnia),
+    assert_fact_negated(denmark, korea)
   )),
   cleanup(remove_facts)
 ]) :-
-  contained_in_location_negated(copenhagen, NegatedContainments).
+  contained_in_location_negated(denmark, NegatedContainments).
 
 :- end_tests(contained_in_location_negated).

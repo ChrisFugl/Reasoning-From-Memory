@@ -30,7 +30,7 @@ def _run_evaluations(threshold_fact, threshold_question):
     nlp = get_language()
     matcher = Matcher(nlp)
     print('Evaluating: Answer no.')
-    answer_no_result = evaluation.answer_no(threshold_fact, matcher)
+    answer_no_result = evaluation.answer_no(threshold_question, matcher)
     print('Evaluating: Answer unknown.')
     answer_unknown_result = evaluation.answer_unknown(threshold_question, matcher)
     print('Evaluating: Answer using inference.')
