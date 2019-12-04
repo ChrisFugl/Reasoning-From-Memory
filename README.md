@@ -1,6 +1,4 @@
 # Reasoning From Memory
-**This project is under development.**
-
 This is a proof of concept of an application that lets a user enter facts using natural language, and the application can later use these facts together with first-order logic inference to answer user questions.
 
 For example:
@@ -44,4 +42,29 @@ Install node modules.
 
 ``` sh
 npm install
+```
+
+## Usage
+There are two ways to use this application: In a browser or in a shell. The application may take ~15 seconds to load, since it has to load word embeddings for the English language.
+
+### Browser
+Start the server.
+
+``` sh
+websocketd --port 10579 python start_web.py
+```
+
+Run this command in another terminal session to open the web application:
+
+``` sh
+npm start
+```
+
+The browser should automatically open a new window/tab, but go to `localhost:8080` in case it does not.
+
+### Shell
+Run this command:
+
+``` sh
+python start_shell.py
 ```
