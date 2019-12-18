@@ -32,7 +32,7 @@ function styles(theme) {
     human: {
       background: theme.palette.secondary.dark,
       marginLeft: 'auto',
-      textAlign: 'right',
+      textAlign: 'left',
     },
     container: {
       border: `1px solid ${theme.palette.divider}`,
