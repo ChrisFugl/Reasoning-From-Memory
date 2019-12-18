@@ -30,13 +30,17 @@ def match_with_relation(threshold, matcher, sentence, relation_name, entity1, en
                 found_match = found_match or match.relation == expected_relation
                 if found_match:
                     break
+            best_match = matches[0]
+            for match in matches:
+                if match.distance < best_match.distance:
+                    best_match = match.distance
             if found_match:
                 passed = True
                 fail_reason = None
             else:
                 match = None
                 passed = False
-                fail_reason = f'Did not match with {expected_relation}.'
+                fail_reason = f'Did not match with {expected_relation}, best match = {best_match}.'
     except:
         match = None
         passed = False
